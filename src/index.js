@@ -41,6 +41,7 @@ export default class RNPickerSelect extends PureComponent {
 
         // Custom Modal props (iOS only)
         doneText: PropTypes.string,
+        titleText: PropTypes.string,
         onDonePress: PropTypes.func,
         onUpArrow: PropTypes.func,
         onDownArrow: PropTypes.func,
@@ -79,6 +80,7 @@ export default class RNPickerSelect extends PureComponent {
         children: null,
         useNativeAndroidPickerStyle: true,
         doneText: 'Done',
+        titleText: '',
         onDonePress: null,
         onUpArrow: null,
         onDownArrow: null,
@@ -288,6 +290,7 @@ export default class RNPickerSelect extends PureComponent {
         const {
             InputAccessoryView,
             doneText,
+            titleText,
             onUpArrow,
             onDownArrow,
             onDonePress,
@@ -338,6 +341,7 @@ export default class RNPickerSelect extends PureComponent {
                         />
                     </TouchableOpacity>
                 </View>
+                <Text>{titleText}</Text>
                 <TouchableOpacity
                     testID="done_button"
                     onPress={() => {
